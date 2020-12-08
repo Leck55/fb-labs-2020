@@ -17,8 +17,8 @@ def Euclid(number, field):
 
 
 def Number_Generator(bits):
-    numb = int(getrandbits(bits))
-    numb = int(numb & ~(1 << 0)) | (1 << 0) | (1 << (bits - 1))
+    numb = int(getrandbits(256))
+    numb = int(numb | 1 | (1 << (256 - 1)))
     if numb % 2 == 0 or numb % 3 == 0 or numb % 5 == 0 or numb % 7 == 0:
         with open("log.txt", "a") as log:
             log.write(hex(numb))
